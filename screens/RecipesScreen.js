@@ -279,7 +279,6 @@ export default RecipesScreen;
         alignItems: 'center',
       },
       modalTitle: {
-        
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 10,

@@ -32,7 +32,7 @@ const InventaireScreen = ({ route }) => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          `https://conso-maestro-backend.vercel.app/inventaire/${userId}/${storageType}`, // Requête pour récupérer les produits du frigo
+          `https://consomaestro-backend.vercel.app/inventaire/${userId}/${storageType}`, // Requête pour récupérer les produits du frigo
           {
             method: "GET",
             headers: {
@@ -102,7 +102,7 @@ const InventaireScreen = ({ route }) => {
   const changementStoragePlace = async (data, newStoragePlace) => {
     try {
       const response = await fetch(
-        `https://conso-maestro-backend.vercel.app/products/${data._id}`,
+        `https://consomaestro-backend.vercel.app/products/${data._id}`,
         {
           method: "PUT",
           headers: {
@@ -169,7 +169,7 @@ const InventaireScreen = ({ route }) => {
 
   // Fonction pour supprimer un produit
   const handleProductDelete = (data) => {
-    fetch(`https://conso-maestro-backend.vercel.app/products/${data._id}`, {
+    fetch(`https://consomaestro-backend.vercel.app/products/${data._id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

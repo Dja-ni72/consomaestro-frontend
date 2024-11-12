@@ -29,7 +29,7 @@ const QuickConsoScreen = () => {
   const changementStoragePlace = async (data, newStoragePlace) => {
     try {
       const response = await fetch(
-        `https://conso-maestro-backend.vercel.app/products/${data._id}`,
+        `https://consomaestro-backend.vercel.app/products/${data._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -76,7 +76,7 @@ const QuickConsoScreen = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          `https://conso-maestro-backend.vercel.app/quickconso/${userId}`,
+          `https://consomaestro-backend.vercel.app/quickconso/${userId}`,
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },
@@ -106,7 +106,7 @@ const QuickConsoScreen = () => {
   const handleProductDelete = async (data) => {
     try {
       const response = await fetch(
-        `https://conso-maestro-backend.vercel.app/products/${data._id}`,
+        `https://consomaestro-backend.vercel.app/products/${data._id}`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },

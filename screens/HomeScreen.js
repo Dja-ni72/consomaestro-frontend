@@ -26,7 +26,7 @@ export default function HomeScreen() {
       const token = await AsyncStorage.getItem("userToken"); // Récupération du token stocké
 
       // Requête pour obtenir les données de conseils depuis le backend
-      fetch("https://conso-maestro-backend.vercel.app/advices", {
+      fetch("https://consomaestro-backend.vercel.app/advices", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`, // Envoi du token dans l'en-tête d'autorisation
@@ -56,7 +56,7 @@ export default function HomeScreen() {
   useEffect(() => {
     const fetchRecalls = async () => {
       try {
-        const response = await fetch(`https://conso-maestro-backend.vercel.app/rappels/check-recall/${userId}`);
+        const response = await fetch(`https://consomaestro-backend.vercel.app/rappels/check-recall/${userId}`);
         const data = await response.json();
 
         if (data && data.recalls && data.recalls.length > 0) {

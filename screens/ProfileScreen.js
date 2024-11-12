@@ -41,7 +41,7 @@ export default function ProfileScreen() {
       const token = await AsyncStorage.getItem("userToken"); // Retrieve the stored token
 
       // Fetch user data from the backend
-      fetch("https://conso-maestro-backend.vercel.app/users/profile", {
+      fetch("https://consomaestro-backend.vercel.app/users/profile", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ export default function ProfileScreen() {
     try {
       const token = await AsyncStorage.getItem("userToken");
       const response = await fetch(
-        "https://conso-maestro-backend.vercel.app/users/delete",
+        "https://consomaestro-backend.vercel.app/users/delete",
         {
           method: "DELETE",
           headers: {
@@ -117,7 +117,7 @@ export default function ProfileScreen() {
     }
 
     // Fetch user data from the backend
-    fetch("https://conso-maestro-backend.vercel.app/users/update", {
+    fetch("https://consomaestro-backend.vercel.app/users/update", {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,

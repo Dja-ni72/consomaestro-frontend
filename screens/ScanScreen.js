@@ -68,7 +68,7 @@ export default function ScanScreen() {
   const fetchProductData = async (userId, data) => {
     console.log("Recherche du produit avec l'UPC : ", data);
     try {
-      const response = await fetch(`https://conso-maestro-backend.vercel.app/products/${userId}/${data}`);
+      const response = await fetch(`https://consomaestro-backend.vercel.app/products/${userId}/${data}`);
       const result = await response.json();
       console.log("Données récupérées : ", result);
 
@@ -108,7 +108,7 @@ export default function ScanScreen() {
 
     const formattedDlc = dlc.toISOString().split("T")[0];
     try {
-      const response = await fetch(`https://conso-maestro-backend.vercel.app/products/${formattedDlc}`, {
+      const response = await fetch(`https://consomaestro-backend.vercel.app/products/${formattedDlc}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

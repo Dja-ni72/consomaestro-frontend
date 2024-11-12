@@ -24,7 +24,7 @@ const RecipesScreen = () => {
       if (newPage === 1) setLoading(true); // Affichage de l'indicateur de chargement initial
       else setLoadingMore(true); // Affichage de l'indicateur de chargement supplémentaire
 
-      const response = await fetch(`https://conso-maestro-backend.vercel.app/recipes/spoonacular?page=${newPage}`);
+      const response = await fetch(`https://consomaestro-backend.vercel.app/recipes/spoonacular?page=${newPage}`);
       const data = await response.json();
       setRecipes((prevRecipes) => [...prevRecipes, ...data.recipes]);
 
@@ -40,7 +40,7 @@ const RecipesScreen = () => {
   // Fonction pour récupérer les recettes favorites de l'utilisateur
   const fetchFavorites = async () => {
     try {
-      const response = await fetch(`https://conso-maestro-backend.vercel.app/recipes/favorites/${userId}`);
+      const response = await fetch(`https://consomaestro-backend.vercel.app/recipes/favorites/${userId}`);
       const data = await response.json();
       setFavorites(data.favorites.map(fav => fav.id)); // Stocke uniquement les IDs des recettes favorites
     } catch (error) {
@@ -69,7 +69,7 @@ const RecipesScreen = () => {
     try {
       if (isFavorite) {
         // Requête DELETE pour retirer la recette des favoris
-        const response = await fetch(`https://conso-maestro-backend.vercel.app/recipes/${id}`, {
+        const response = await fetch(`https://consomaestro-backend.vercel.app/recipes/${id}`, {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId })
@@ -87,7 +87,7 @@ const RecipesScreen = () => {
           const products = recipe.extendedIngredients.map((ingredient) => ingredient.name);
           console.log('Données envoyées à l\'API:', { userId, recipeId: id, title, image, description: recipe.description, products });
         // Requête POST pour ajouter la recette aux favoris
-        const response = await fetch('https://conso-maestro-backend.vercel.app/recipes', {
+        const response = await fetch('https://consomaestro-backend.vercel.app/recipes', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId, recipeId: id, title, image, description: recipe.description, products })
